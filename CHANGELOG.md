@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-23
+
 ### Added
 
 - The `Contenir\Tracking\Mezzio\Tracking` service, built once from the site's config and shared across requests.
