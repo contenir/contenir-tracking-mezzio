@@ -1,0 +1,91 @@
+{
+    "name": "contenir/contenir-tracking-mezzio",
+    "description": "Mezzio adapter for contenir/contenir-tracking: a shared service whose head() and bodyStart() write a site's tags, Consent Mode first, with the page's CSP nonce, and a tracking() helper for laminas-view layouts.",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "contenir",
+        "analytics",
+        "tracking",
+        "consent-mode",
+        "mezzio",
+        "laminas-view"
+    ],
+    "homepage": "https://contenir.com.au",
+    "support": {
+        "issues": "https://github.com/contenir/contenir-tracking-mezzio/issues",
+        "source": "https://github.com/contenir/contenir-tracking-mezzio"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/contenir/contenir-tracking"
+        }
+    ],
+    "require": {
+        "php": "~8.3.0 || ~8.4.0 || ~8.5.0",
+        "contenir/contenir-tracking": "^0.2",
+        "psr/container": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "contenir/contenir-qa-tools": "0.1.x-dev",
+        "infection/infection": "^0.34.1",
+        "laminas/laminas-servicemanager": "^3.22 || ^4.0",
+        "laminas/laminas-view": "^2.30",
+        "phpunit/phpunit": "^11.5.42"
+    },
+    "suggest": {
+        "mezzio/mezzio-laminasviewrenderer": "To call tracking() from laminas-view layouts"
+    },
+    "autoload": {
+        "psr-4": {
+            "Contenir\\Tracking\\Mezzio\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Contenir\\Tracking\\Mezzio\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@static-analysis",
+            "@test",
+            "@test-integration",
+            "@mutation-test"
+        ],
+        "cs-check": [
+            "mago format --check",
+            "mago lint"
+        ],
+        "cs-fix": [
+            "mago format",
+            "mago lint --fix"
+        ],
+        "static-analysis": "mago analyze",
+        "test": "phpunit --colors=always --testsuite unit",
+        "test-integration": "phpunit --colors=always --testsuite integration",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "mutation-test": "infection"
+    },
+    "config": {
+        "platform": {
+            "php": "8.3.99"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        }
+    },
+    "extra": {
+        "laminas": {
+            "config-provider": "Contenir\\Tracking\\Mezzio\\ConfigProvider"
+        },
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
