@@ -1,5 +1,8 @@
 # contenir/contenir-tracking-mezzio
 
+[![Continuous Integration](https://github.com/contenir/contenir-tracking-mezzio/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/contenir/contenir-tracking-mezzio/actions/workflows/continuous-integration.yml)
+[![codecov](https://codecov.io/gh/contenir/contenir-tracking-mezzio/graph/badge.svg)](https://codecov.io/gh/contenir/contenir-tracking-mezzio)
+
 The Mezzio adapter for [contenir/contenir-tracking](https://github.com/contenir/contenir-tracking). It writes a
 site's analytics and advertising tags into its layout: Google Consent Mode v2 first, then the Google tag, Tag
 Manager, the Meta pixel and LinkedIn Insight, each with the page's CSP nonce.
