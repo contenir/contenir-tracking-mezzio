@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ * @var string                            $nonce
+ */
+?>
+<!doctype html>
+<html>
+<head>
+<?= $this->tracking()->head($nonce) ?>
+</head>
+<body>
+<?= $this->tracking()->bodyStart() ?>
+</body>
+</html>
